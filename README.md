@@ -222,6 +222,48 @@ Insert into mailids values
     -> (94,'def@yahoo.com');
 ```
 
+### Query to delete records having the same id but keeping the ids that have the least id number
+
+DELETE FROM mailids WHERE candidate_id in (Select tempcandidate_id from (select Distinct a.candidate_id as tempcandidate_id from mailids a inner join mailids b where a.mail=b.mail and a.candidate_id>b.candidate_id) as c) order by candidate_id desc;
+
+### Procedure
+
+```
+DELIMITER &&  
+CREATE PROCEDURE Delete_rows_with_same_value_except_smallest_id ()  
+BEGIN  
+DELETE FROM 
+  mailids 
+WHERE 
+  candidate_id in (
+    Select 
+      tempcandidate_id 
+    from 
+      (
+        select 
+          Distinct a.candidate_id as tempcandidate_id 
+        from 
+          mailids a 
+          inner join mailids b 
+        where 
+          a.mail = b.mail 
+          and a.candidate_id > b.candidate_id
+      ) as c
+  ); 
+-- Display the table after deletion
+SELECT 
+  * 
+FROM 
+  Sqlassignment.mailids 
+order by 
+  candidate_id DESC;
+END &&  
+DELIMITER ;  
+```
+The inner Join query is a subquery that returns all the duplicate elements in the table in the mailids and the delete statement deletes these records but the records with the minimum candidate_id.
+
+<img width="581" alt="Screenshot 2023-02-13 at 6 32 09 PM" src="https://user-images.githubusercontent.com/122535424/218465326-7e2a8cbe-914d-4a8e-a03d-68f8b7050103.png">
+
 
 
  
