@@ -198,8 +198,29 @@ the ranks are grouped together so that two students who score the same marks are
 
 <img width="383" alt="Screenshot 2023-02-13 at 5 37 33 PM" src="https://user-images.githubusercontent.com/122535424/218453763-8be229fa-f7b1-4b88-ab5f-b53d562f7415.png">
 
+<img width="522" alt="Screenshot 2023-02-13 at 5 38 43 PM" src="https://user-images.githubusercontent.com/122535424/218454943-7a5322bd-54fc-4bf5-8ea4-71ad56f9b871.png">
+
+
 <img width="1440" alt="Screenshot 2023-02-13 at 5 43 26 PM" src="https://user-images.githubusercontent.com/122535424/218454812-33d146d0-b35b-4621-86c0-025d41ff3f5e.png">
 
+
+### To create table mailids like above
+```
+create table mailids (
+    -> candidate_id integer(4) not null,
+    -> mail varchar(30) not null);
+```
+
+### Insert values in Table "mailid"
+
+```
+Insert into mailids values 
+    -> (45,'abc@gmail.com'),
+    -> (23,'def@yahoo.com'),
+    -> (34,'abc@gmail.com'),
+    -> (21,'bcf@gmail.com'),
+    -> (94,'def@yahoo.com');
+```
 
 
 
