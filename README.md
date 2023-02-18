@@ -141,7 +141,8 @@ The above procedure selects three columns, name of the employee, value to store 
 The greatest function is used to get the highest salary per employee in the columns in Jan, Feb and March.
 the feild function is used to get the month where the highest salary exists
 
-<img width="730" alt="Screenshot 2023-02-13 at 5 01 00 PM" src="https://user-images.githubusercontent.com/122535424/218446567-f7dd2aab-e85e-4559-a21a-d3dfebc90e2c.png">
+<img width="692" alt="Screenshot 2023-02-18 at 4 59 04 PM" src="https://user-images.githubusercontent.com/122535424/219857819-3501efa6-4136-4e7e-9509-6e25e39b48a5.png">
+
 
 <img width="633" alt="Screenshot 2023-02-13 at 5 01 23 PM" src="https://user-images.githubusercontent.com/122535424/218446626-6547854a-ed89-45d2-ac2e-f8fa98b7e423.png">
 
@@ -175,7 +176,7 @@ SELECT Marks,GROUP_CONCAT(Candidate_id) as Candidate_id, dense_rank() OVER (orde
 ### Procedure
 ```
 DELIMITER &&  
-mysql> CREATE PROCEDURE rank_in_order ()  
+mysql> CREATE PROCEDURE ranks ()  
     -> BEGIN  
     -> SELECT 
     ->   Marks, 
@@ -195,11 +196,9 @@ The above procedure selects the three columns Marks, Rank and candidate id
 the dense rank function calculates the rank of the students on the marks achieved
 the ranks are grouped together so that two students who score the same marks are given the same rank instead of different ranks
 
-
-<img width="383" alt="Screenshot 2023-02-13 at 5 37 33 PM" src="https://user-images.githubusercontent.com/122535424/218453763-8be229fa-f7b1-4b88-ab5f-b53d562f7415.png">
+<img width="368" alt="Screenshot 2023-02-18 at 5 00 43 PM" src="https://user-images.githubusercontent.com/122535424/219857906-2ea5593d-4e34-4a13-9391-905780a7a66c.png">
 
 <img width="522" alt="Screenshot 2023-02-13 at 5 38 43 PM" src="https://user-images.githubusercontent.com/122535424/218454943-7a5322bd-54fc-4bf5-8ea4-71ad56f9b871.png">
-
 
 <img width="1440" alt="Screenshot 2023-02-13 at 5 43 26 PM" src="https://user-images.githubusercontent.com/122535424/218454812-33d146d0-b35b-4621-86c0-025d41ff3f5e.png">
 
@@ -230,7 +229,7 @@ DELETE FROM mailids WHERE candidate_id in (Select tempcandidate_id from (select 
 
 ```
 DELIMITER &&  
-CREATE PROCEDURE Delete_rows_with_same_value_except_smallest_id ()  
+CREATE PROCEDURE Delete_duplicates ()  
 BEGIN  
 DELETE FROM 
   mailids 
@@ -262,7 +261,8 @@ DELIMITER ;
 ```
 The inner Join query is a subquery that returns all the duplicate elements in the table in the mailids and the delete statement deletes these records but the records with the minimum candidate_id.
 
-<img width="581" alt="Screenshot 2023-02-13 at 6 32 09 PM" src="https://user-images.githubusercontent.com/122535424/218465326-7e2a8cbe-914d-4a8e-a03d-68f8b7050103.png">
+<img width="432" alt="Screenshot 2023-02-18 at 5 02 53 PM" src="https://user-images.githubusercontent.com/122535424/219858031-073ef326-91eb-4db3-8018-c9a8a707881d.png">
+
 
 
 
