@@ -229,7 +229,7 @@ DELETE FROM mailids WHERE candidate_id in (Select tempcandidate_id from (select 
 
 ```
 DELIMITER &&  
-CREATE PROCEDURE Delete_duplicates ()  
+CREATE PROCEDURE delete_duplicates ()  
 BEGIN  
 DELETE FROM 
   mailids 
