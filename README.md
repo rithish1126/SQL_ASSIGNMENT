@@ -53,7 +53,7 @@ FROM employees GROUP BY Department;
 
 ```
 DELIMITER &&  
-mysql> CREATE PROCEDURE get_num_of_male_and_female ()
+mysql> CREATE PROCEDURE Total_male_female ()
     -> BEGIN  
     -> SELECT 
     ->   IFNULL(Department, 'Not Assigned') as Department, 
@@ -76,7 +76,7 @@ As we see above while inserting we can give null values to department so to hand
 
 Upper function here is used to make all the values in the gender column to uppercase to make it easy to equate if "FEMALE" or "MALE"
 
-<img width="534" alt="Screenshot 2023-02-13 at 4 06 20 PM" src="https://user-images.githubusercontent.com/122535424/218435555-aafb4980-b6d6-4977-82f2-5aa0fdb222be.png">
+<img width="432" alt="Screenshot 2023-02-18 at 4 44 36 PM" src="https://user-images.githubusercontent.com/122535424/219857263-7ccada15-3efd-4b7e-b0de-0d614599fd4e.png">
 
 <img width="894" alt="Screenshot 2023-02-13 at 4 09 03 PM" src="https://user-images.githubusercontent.com/122535424/218436204-e3876163-e1dc-46bf-8dc8-04e28c156b65.png">
 
@@ -114,7 +114,7 @@ select emp_name as Name,value,case when idx=1 then 'Jan' when idx=2 then 'Feb' w
 ### Procedure to run above query
 ```
 DELIMITER &&  
-mysql> CREATE PROCEDURE max_amount_from_rows_with_month_name()  
+mysql> CREATE PROCEDURE Max_amt_perrow()  
     -> BEGIN  
     -> select 
     ->   emp_name as Name, 
