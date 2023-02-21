@@ -28,7 +28,6 @@ Question 2:
 <img width="534" alt="Screenshot 2023-02-18 at 5 21 54 PM" src="https://user-images.githubusercontent.com/122535424/219864153-471bd813-e0ca-4a46-9d69-5743cf60c412.png">
 Pankaj's approach
 ```
-
 SELECT Name, 
   ANY_VALUE(CASE 
     WHEN Jan = GREATEST(Jan, Feb, Mar) THEN 'Jan'
@@ -37,11 +36,9 @@ SELECT Name,
   END) AS Month,
   GREATEST(Jan, Feb, Mar) AS Value
 FROM emp_salary
-
 ```
 Kushagra's approach
 ```
-
 SELECT Name,
 GREATEST(Jan, Feb, Mar) AS Value,
 ANY_VALUE(CASE
@@ -50,7 +47,6 @@ ANY_VALUE(CASE
   WHEN Mar = GREATEST(Jan, Feb, Mar) THEN 'Mar'
   END) AS Month
 FROM salary;
-
 ```
 
 Here Pankaj has selected three columns from the table emp_salary , The name as in the employee name , the value by finding the greatest value from the three columns, and then he maps the greatest value in the record to the month it belongs by using the case statement. While the same thing is done by kushagra. 
